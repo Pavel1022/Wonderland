@@ -103,7 +103,7 @@
   display: flex;
   align-items: center;
   padding: $input-padding-y $input-padding-x;
-  margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
+  margin-bottom: 0; // Allow use of <label> elements by overriding our homepage margin-bottom
   @include font-size($input-font-size); // Match inputs
   font-weight: $font-weight-normal;
   line-height: $input-line-height;
@@ -114,7 +114,7 @@
   border: $input-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius);
 
-  // Nuke default margins from checkboxes and radios to vertically center within.
+  // Nuke homepage margins from checkboxes and radios to vertically center within.
   input[type="radio"],
   input[type="checkbox"] {
     margin-top: 0;
@@ -124,7 +124,7 @@
 
 // Sizing
 //
-// Remix the default form control sizing classes into new ones for easier
+// Remix the homepage form control sizing classes into new ones for easier
 // manipulation.
 
 .input-group-lg > .form-control:not(textarea),

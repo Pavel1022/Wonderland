@@ -1,6 +1,6 @@
 // Button variants
 //
-// Easily pump out default styles, as well as :hover, :focus, :active,
+// Easily pump out homepage styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
 
 @mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
@@ -102,6 +102,6 @@
   padding: $padding-y $padding-x;
   @include font-size($font-size);
   line-height: $line-height;
-  // Manually declare to provide an override to the browser default
+  // Manually declare to provide an override to the browser homepage
   @include border-radius($border-radius, 0);
 }

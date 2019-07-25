@@ -36,7 +36,7 @@
   // Placeholder
   &::placeholder {
     color: $input-placeholder-color;
-    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    // Override Firefox's unusual homepage opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
@@ -55,7 +55,7 @@
 
 select.form-control {
   &:focus::-ms-value {
-    // Suppress the nested default white text on blue background highlight given to
+    // Suppress the nested homepage white text on blue background highlight given to
     // the selected option text when the (still closed) <select> receives focus
     // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
     // match the appearance of the native widget.
@@ -82,8 +82,8 @@ select.form-control {
 .col-form-label {
   padding-top: calc(#{$input-padding-y} + #{$input-border-width});
   padding-bottom: calc(#{$input-padding-y} + #{$input-border-width});
-  margin-bottom: 0; // Override the `<label>/<legend>` default
-  @include font-size(inherit); // Override the `<legend>` default
+  margin-bottom: 0; // Override the `<label>/<legend>` homepage
+  @include font-size(inherit); // Override the `<legend>` homepage
   line-height: $input-line-height;
 }
 
@@ -112,7 +112,7 @@ select.form-control {
   width: 100%;
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
-  margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+  margin-bottom: 0; // match inputs if this class comes on inputs with homepage margins
   line-height: $input-line-height;
   color: $input-plaintext-color;
   background-color: transparent;
@@ -216,7 +216,7 @@ textarea.form-control {
 }
 
 .form-check-label {
-  margin-bottom: 0; // Override default `<label>` bottom margin
+  margin-bottom: 0; // Override homepage `<label>` bottom margin
 }
 
 .form-check-inline {
@@ -253,7 +253,7 @@ textarea.form-control {
 // viewports reach <768px.
 //
 // Requires wrapping inputs and labels with `.form-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
+// homepage HTML form controls and our custom form controls (e.g., input groups).
 
 .form-inline {
   display: flex;
@@ -302,7 +302,7 @@ textarea.form-control {
       width: auto;
     }
 
-    // Remove default margin on radios/checkboxes that were used for stacking, and
+    // Remove homepage margin on radios/checkboxes that were used for stacking, and
     // then undo the floating of radios and checkboxes to match.
     .form-check {
       display: flex;

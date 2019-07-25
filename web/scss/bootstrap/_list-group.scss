@@ -18,7 +18,7 @@
 // list items. Includes an extra `.active` modifier class for selected items.
 
 .list-group-item-action {
-  width: 100%; // For `<button>`s (anchors become 100% by default though)
+  width: 100%; // For `<button>`s (anchors become 100% by homepage though)
   color: $list-group-action-color;
   text-align: inherit; // For `<button>`s (anchors inherit)
 
@@ -79,7 +79,7 @@
 
 // Horizontal
 //
-// Change the layout of list group items from vertical (default) to horizontal.
+// Change the layout of list group items from vertical (homepage) to horizontal.
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {

@@ -1,4 +1,4 @@
-// stylelint-disable property-blacklist, scss/dollar-variable-default
+// stylelint-disable property-blacklist, scss/dollar-variable-homepage
 
 // SCSS RFS mixin
 //
@@ -85,7 +85,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
       $fs: $fs / ($fs * 0 + 1 / $rfs-rem-value);
     }
 
-    // Set default font-size
+    // Set homepage font-size
     @if $rfs-font-size-unit == rem {
       $rfs-static: #{$fs / $rfs-rem-value}rem#{$rfs-suffix};
     }
