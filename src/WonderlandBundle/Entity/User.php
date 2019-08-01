@@ -4,6 +4,7 @@ namespace WonderlandBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -53,7 +54,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
@@ -63,10 +64,14 @@ class User implements UserInterface
      * @ORM\Column(name="phone", type="string", length=255)
      */
     private $phone;
+//
+    /**
+     * @ORM\Column(name="file", type="string", length=255)
+     */
+    private $file;
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="createdOn", type="datetime")
      */
     private $createdOn;
@@ -232,6 +237,30 @@ class User implements UserInterface
     }
 
     /**
+     * Set file
+     *
+     * @param string $file
+     *
+     * @return User
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
      * Set createdOn
      *
      * @param \DateTime $createdOn
@@ -271,7 +300,7 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return [];
+        return ['ROLE_USER'];
     }
 
     /**

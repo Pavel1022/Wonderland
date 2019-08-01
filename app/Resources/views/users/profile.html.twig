@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+<form class="bg-light p-5 contact-form" style="margin-bottom: 30px;">
+    <h3 class="mb-4" style="text-align: center">Your Profile !</h3>
+    <div class="row pt-md-4">
+        <div class="col-md-12">
+            <div class="blog-entry ftco-animate d-md-flex fadeInUp ftco-animated">
+                    <a class="img img-2" style="background-image: url({{ asset("uploads/profile/" ~ user.file) }});" aria-disabled="true"></a>
+                <div class="text text-2 pl-md-4">
+                    <div class="meta-wrap">
+                        <h3 class="mb-2">{{ user.firstName }} {{ user.lastName }}</h3>
+                    </div>
+                        <p>Username: {{ user.username }}</p>
+                    <p>E-Mail: {{ user.email }}</p>
+                    <p>Phone Number: {{ user.phone }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<h3 style="text-align: center; margin-top: 30px">My Posts</h3>
+    {% set count = 0 %}
+    {% for post in posts %}
+        {% set count = count + 1 %}
+        <div class="row pt-md-4">
+            <div class="col-md-12">
+                <div class="blog-entry ftco-animate d-md-flex fadeInUp ftco-animated">
+                    <a class="img img-2" style="background-image: url({{ asset("uploads/post/" ~ post.postImage) }});" aria-disabled="true"></a>
+                    <div class="text text-2 pl-md-4">
+                        <h3 class="mb-2"><a aria-disabled="true">{{ post.title }}</a></h3>
+                        <div class="meta-wrap">
+                            <p class="meta">
+                                <span><i class="icon-calendar mr-2"></i>{{ post.addedOn }}</span>
+                                <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+                            </p>
+                        </div>
+                        <p><a href="{{ path('post_view', {'id' : post.id}) }}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+    {% if count == 0 %}
+        <p style="text-align: center">You haven't posts ? <a href="{{ path('post_create') }}">Create one !</a></p>
+    {% endif %}
+{% endblock %}
