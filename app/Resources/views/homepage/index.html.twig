@@ -5,6 +5,7 @@
     <div class="row d-flex">
         <div class="col-xl-8 py-5 px-md-5">
             {% endif %}
+    {% set counter = 0 %}
     {% for post in posts %}
     <div class="row pt-md-4">
         <div class="col-md-12">
@@ -15,7 +16,9 @@
                     <div class="meta-wrap">
                         <p class="meta">
                             <span><i class="icon-calendar mr-2"></i>{{ post.addedOn }}</span>
-                            <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+                                {% for comment in comments|slice( counter ,1) %}
+                            <span><i class="icon-comment2 mr-2"></i>{{ comment }} Comment</span>
+                                {% endfor %}
                         </p>
                     </div>
                     <p><a href="{{ path('post_view', {'id' : post.id}) }}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
@@ -24,6 +27,7 @@
 
         </div>
     </div>
+        {% set counter = counter + 1 %}
     {% endfor %}
         </div>
     {% if app.user %}
@@ -33,18 +37,20 @@
                 <h3 class="sidebar-heading" style="text-align: center">My Posts</h3>
                 {% set count = 0 %}
                 {% for post in myPosts %}
-                    {% set count = count + 1 %}
                 <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4" style="background-image: url({{ asset("uploads/post/" ~ post.postImage) }});"></a>
+                    <a href="{{ path('post_view', {id : post.id}) }}" class="blog-img mr-4" style="background-image: url({{ asset("uploads/post/" ~ post.postImage) }});"></a>
                     <div class="text">
-                        <h3 class="heading"><a href="#">{{ post.title }}</a>
+                        <h3 class="heading"><a href="{{ path('post_view', {id : post.id}) }}">{{ post.title }}</a>
                         </h3>
                         <div class="meta">
                             <div><a><span class="icon-calendar"></span>{{ post.addedOn }}</a></div>
-                            <div><a><span class="icon-chat"></span> 19</a></div>
+                            {% for comment in myComments|slice( count ,1) %}
+                            <div><a><span class="icon-chat"></span> {{ comment }}</a></div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
+                    {% set count = count + 1 %}
                 {% endfor %}
                 {% if count == 0 %}
                     <p style="text-align: center">You haven't posts ? <a href="{{ path('post_create') }}">Create one !</a></p>

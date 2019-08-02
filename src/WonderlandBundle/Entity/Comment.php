@@ -66,6 +66,11 @@ class Comment
     private $addedOn;
 
     /**
+     * @ORM\Column(name="deleted", type="boolean")
+     */
+    private $deleted;
+
+    /**
      * Comment constructor.
      */
     public function __construct()
@@ -207,6 +212,22 @@ class Comment
     public function getAddedOn()
     {
         return $this->addedOn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param mixed $deleted
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
     }
 
 

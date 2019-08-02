@@ -63,6 +63,11 @@ class Post
     private $author;
 
     /**
+     * @ORM\Column(name="deleted", type="boolean")
+     */
+    private $deleted;
+
+    /**
      * Post constructor.
      */
     public function __construct()
@@ -215,5 +220,22 @@ class Post
     {
         return $this->postImage;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param mixed $deleted
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
+    }
+
 }
 

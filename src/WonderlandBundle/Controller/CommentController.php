@@ -31,11 +31,35 @@ class CommentController extends Controller
             $post = $this->getDoctrine()->getRepository('WonderlandBundle:Post')->find($id);
             $comment->setAuthor($this->getUser());
             $comment->setPost($post);
+            $comment->setDeleted(0);
             $comment->setAddedOn($comment->getAddedOn()->format('d-m-Y'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
         }
         return $this->redirect('http://127.0.0.1:8000/post/' . $id);
+    }
+
+    /**
+     * @Route("/delete/comment/{id}",name="delete_comment")
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function deleteAction($id)
+    {
+        $comment = $this->getDoctrine()->getRepository(Comment::class)->find($id);
+        if ($comment->getDeleted() === true)
+        {
+            return $this->redirectToRoute('homepage');
+        }
+
+        $postId = $comment->getPostId();
+        $comment->setDeleted(1);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($comment);
+        $em->flush();
+        return $this->redirectToRoute('post_view', [
+            'id' => $postId
+        ]);
     }
 }

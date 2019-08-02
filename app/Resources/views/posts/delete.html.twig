@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<form action="{{ path('post_delete', {id : post.id}) }}" method="post">
+    <div class="row d-flex">
+    <div class="col-xl-8 px-md-5 py-5">
+    <div class="row pt-md-4">
+    <div class="col-md-12">
+    <div class="blog-entry-2 ftco-animate fadeInUp ftco-animated">
+    <a class="img" style="background-image: url({{ asset("uploads/post/" ~ post.postImage) }});" aria-disabled="true"></a>
+    <div class="text pt-4">
+        <h3 class="mb-4"><a aria-disabled="true">{{ post.title }}</a></h3>
+        <p class="mb-4">{{ post.description }}</p>
+    </div>
+    <a class="btn btn-primary" href="{{ path('post_view', {id : post.id}) }}" role="button" style=" margin-left: 66%; ">Cancel</a>
+    <input class="btn btn-danger" type="submit" role="button" value="Delete"><br><br>
+    </div>
+    </div>
+    </div><!-- END-->
+    </div>
+    </div>
+    {{ form_row(form._token) }}
+</form>
+
+{% endblock %}
