@@ -2,9 +2,10 @@
 
 namespace WonderlandBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -76,9 +77,28 @@ class User implements UserInterface
      */
     private $createdOn;
 
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="WonderlandBundle\Entity\Role")
+     * @ORM\JoinTable(name="users_roles",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")})
+     */
+    private $roles;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="WonderlandBundle\Entity\Post", mappedBy="author")
+     */
+    private $posts;
+
     public function __construct()
     {
         $this->createdOn = new \DateTime();
+        $this->posts = new ArrayCollection();
+        $this->roles = new ArrayCollection();
     }
 
 
@@ -285,6 +305,40 @@ class User implements UserInterface
     }
 
     /**
+     * @param Post $post
+     * @return bool
+     */
+    public function isAuthor(Post $post)
+    {
+        return $post->getAuthorId() == $this->getId();
+    }
+    /**
+     * @return Collection
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * @param Post $post
+     * @return User
+     */
+    public function addPost(Post $post)
+    {
+        $this->post[] = $post;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return in_array("ROLE_ADMIN", $this->getRoles());
+    }
+
+    /**
      * Returns the roles granted to the user.
      *
      *     public function getRoles()
@@ -296,11 +350,29 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        $stringRoles = [];
+        foreach ($this->roles as $role)
+        {
+            /** @var $role Role */
+            $stringRoles[] = $role->getRole();
+        }
+        return $stringRoles;
+    }
+
+    /**
+     * @param Role $role
+     *
+     * @return User
+     */
+    public function addRole(Role $role)
+    {
+        $this->roles[] = $role;
+
+        return $this;
     }
 
     /**

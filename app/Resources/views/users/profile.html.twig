@@ -11,6 +11,9 @@
                 <div class="text text-2 pl-md-4">
                     <div class="meta-wrap">
                         <h3 class="mb-2">{{ user.firstName }} {{ user.lastName }}</h3>
+                        {% if user.isAdmin %}
+                        <p class="mb-2">Admin</p>
+                        {% endif %}
                     </div>
                         <p>Username: {{ user.username }}</p>
                     <p>E-Mail: {{ user.email }}</p>

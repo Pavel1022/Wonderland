@@ -9,9 +9,24 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use WonderlandBundle\Entity\Comment;
 use WonderlandBundle\Form\CommentType;
+use WonderlandBundle\Service\Comments\CommentServiceInterface;
 
 class CommentController extends Controller
 {
+    /**
+     * @var CommentServiceInterface
+     */
+    private $commentService;
+
+    /**
+     * CommentController constructor.
+     * @param CommentServiceInterface $commentService
+     */
+    public function __construct(CommentServiceInterface $commentService)
+    {
+        $this->commentService = $commentService;
+    }
+
     /**
      * @Route("/comment/{id}", name="comment")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
@@ -29,13 +44,12 @@ class CommentController extends Controller
         if($form->isSubmitted())
         {
             $post = $this->getDoctrine()->getRepository('WonderlandBundle:Post')->find($id);
-            $comment->setAuthor($this->getUser());
-            $comment->setPost($post);
-            $comment->setDeleted(0);
-            $comment->setAddedOn($comment->getAddedOn()->format('d-m-Y'));
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($comment);
-            $em->flush();
+            if ($comment->getComment() === null)
+            {
+                return $this->redirect('http://127.0.0.1:8000/post/' . $id);
+            }
+            $this-$this->commentService->add($comment, $post, $this->getUser());
+
         }
         return $this->redirect('http://127.0.0.1:8000/post/' . $id);
     }

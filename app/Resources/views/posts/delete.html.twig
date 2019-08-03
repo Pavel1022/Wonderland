@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-<form action="{{ path('post_delete', {id : post.id}) }}" method="post">
+<form action="{{ path('post_delete_action', {id : post.id}) }}" method="post">
     <div class="row d-flex">
     <div class="col-xl-8 px-md-5 py-5">
     <div class="row pt-md-4">
@@ -10,7 +10,7 @@
     <a class="img" style="background-image: url({{ asset("uploads/post/" ~ post.postImage) }});" aria-disabled="true"></a>
     <div class="text pt-4">
         <h3 class="mb-4"><a aria-disabled="true">{{ post.title }}</a></h3>
-        <p class="mb-4">{{ post.description }}</p>
+        <p class="mb-4" style="display:block;width:623px;word-wrap:break-word;">{{ post.description }}</p>
     </div>
     <a class="btn btn-primary" href="{{ path('post_view', {id : post.id}) }}" role="button" style=" margin-left: 66%; ">Cancel</a>
     <input class="btn btn-danger" type="submit" role="button" value="Delete"><br><br>

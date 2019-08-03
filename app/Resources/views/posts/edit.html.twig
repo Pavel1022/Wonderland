@@ -1,8 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    <form action="{{ path('post_edit', {id : post.id}) }}" method="post" class="bg-light p-5 contact-form" enctype="multipart/form-data">
+    <form action="{{ path('post_edit_action', {id : post.id}) }}" method="post" class="bg-light p-5 contact-form" enctype="multipart/form-data">
         <h3 class="mb-4" style="text-align: center">Edit Post !</h3>
+        {% if errors %}
+            <div class="alert alert-danger">
+                {% for error in errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Title" name="post[title]" value="{{ post.title }}">
         </div>
