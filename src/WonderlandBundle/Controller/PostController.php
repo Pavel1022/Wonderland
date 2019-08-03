@@ -119,6 +119,10 @@ class PostController extends Controller
     public function editAction($id, Request $request)
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        if ($this->getUser()->getBan())
+        {
+            return $this->redirectToRoute('homepage');
+        }
         $post = $this->getDoctrine()
             ->getRepository(Post::class)->find($id);
         $isValid = $this->postService->checkPost($post, $this->getUser());

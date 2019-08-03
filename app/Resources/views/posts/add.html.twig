@@ -2,16 +2,9 @@
 
 {% block main %}
     {% if app.user.ban %}
-        <div>
+        <div class="bg-light p-5 contact-form">
             <h3 class="mb-4" style="text-align: center">Create Post !</h3>
             <p style="color: #C82829"><strong>You have BAN !</strong></p>
-            {% if errors %}
-                <div class="alert alert-danger">
-                    {% for error in errors %}
-                        {{ error }}<br>
-                    {% endfor %}
-                </div>
-            {% endif %}
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Title" name="post[title]" disabled>
             </div>
