@@ -22,5 +22,7 @@ interface UserValidatorServiceInterface
 
     public function checkFile($file);
 
+    public function validateEditUser($firstName, $lastName, $email, $phone);
+
     public function getErrors();
 }

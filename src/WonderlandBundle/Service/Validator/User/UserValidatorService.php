@@ -91,11 +91,13 @@ class UserValidatorService implements UserValidatorServiceInterface
         if (!$file)
         {
             $this->errors[] = 'Not uploaded file!';
+            return true;
         }
     }
 
     public function validate($username, $password, $firstName, $lastName, $phone, $email, $file, $users)
     {
+        $this->errors = [];
         $this->checkUsername($username, $users);
         $this->checkPassword($password);
         $this->checkFirstName($firstName);
@@ -115,7 +117,16 @@ class UserValidatorService implements UserValidatorServiceInterface
         if (strlen($phone) !== 10)
         {
             $this->errors[] = 'Phone number must be 10 digits!';
+            return true;
         }
     }
 
+    public function validateEditUser($firstName, $lastName, $email, $phone)
+    {
+        $this->errors = [];
+        $this->checkFirstName($firstName);
+        $this->checkLastName($lastName);
+        $this->checkPhone($phone);
+        $this->checkEmail($email);
+    }
 }

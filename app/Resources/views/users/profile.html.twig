@@ -18,6 +18,8 @@
                         <p>Username: {{ user.username }}</p>
                     <p>E-Mail: {{ user.email }}</p>
                     <p>Phone Number: {{ user.phone }}</p>
+                    <a class="btn btn-success" href="{{ path('edit_user', {id : user.id}) }}" role="button" style=" margin-left: 60%; ">Edit Profile</a>
+                    <a class="btn btn-danger" href="{{ path('change_user', {id : user.id}) }}" role="button">Change Password</a>
                 </div>
             </div>
 

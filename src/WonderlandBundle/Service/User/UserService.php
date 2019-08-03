@@ -4,6 +4,7 @@
 namespace WonderlandBundle\Service\User;
 
 
+use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -35,7 +36,7 @@ class UserService implements UserServiceInterface
     private $encoder;
 
     /**
-     * @var \Doctrine\Common\Persistence\ObjectRepository
+     * @var ObjectRepository
      */
     private $roleRepository;
 
@@ -85,5 +86,27 @@ class UserService implements UserServiceInterface
     public function getUser($user)
     {
         return $this->userRepository->find($user);
+    }
+
+    public function edit($user, $form, $fileName, $username, $password, $createdOn)
+    {
+        $this->userValidatorService->validateEditUser(
+            $user->getFirstName(),
+            $user->getLastName(),
+            $user->getEmail(),
+            $user->getPhone());
+        $errors = $this->userValidatorService->getErrors();
+        if($errors) {
+            return $errors;
+        }
+        $user->setUsername($username);
+        $user->setPassword($password);
+        $user->setCreatedOn($createdOn);
+        $user->setFile($fileName);
+
+        $em = $this->entityManager;
+        $em->persist($user);
+        $em->flush();
+        return true;
     }
 }
