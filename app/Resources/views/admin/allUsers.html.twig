@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {% for user in users %}
+        <div class="row pt-md-4">
+            <div class="col-md-12">
+                <div class="blog-entry ftco-animate d-md-flex fadeInUp ftco-animated">
+                    <a class="img img-2" style="background-image: url({{ asset("uploads/profile/" ~ user.file) }});" aria-disabled="true"></a>
+                    <div class="text text-2 pl-md-4">
+                        <div class="meta-wrap">
+                            <h3 class="mb-2" style="margin-top: 5%;">{{ user.username }}</h3>
+                            {% if user.isAdmin %}
+                                <span>Admin</span>
+                            {% else %}
+                                {% if user.ban %}
+                                    <a class="btn btn-success" href="{{ path('unban_user', {id : user.id}) }}" role="button">Unban</a>
+                                {% else %}
+                                    <a class="btn btn-danger" href="{{ path('ban_user', {id : user.id}) }}" role="button">Ban</a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

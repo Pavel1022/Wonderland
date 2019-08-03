@@ -43,12 +43,16 @@ class CommentController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted())
         {
+            if ($this->getUser()->getBan())
+            {
+                return $this->redirect('http://127.0.0.1:8000/post/' . $id);
+            }
             $post = $this->getDoctrine()->getRepository('WonderlandBundle:Post')->find($id);
             if ($comment->getComment() === null)
             {
                 return $this->redirect('http://127.0.0.1:8000/post/' . $id);
             }
-            $this-$this->commentService->add($comment, $post, $this->getUser());
+            $this->commentService->add($comment, $post, $this->getUser());
 
         }
         return $this->redirect('http://127.0.0.1:8000/post/' . $id);

@@ -72,6 +72,7 @@ class UserService implements UserServiceInterface
         $password = $this->encoder
             ->encodePassword($user, $user->getPassword());
         $user->setPassword($password);
+        $user->setBan(0);
 
         $userRole = $this->roleRepository->findOneBy(['name' => 'ROLE_USER']);
 

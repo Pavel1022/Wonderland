@@ -94,6 +94,11 @@ class User implements UserInterface
      */
     private $posts;
 
+    /**
+     * @ORM\Column(name="ban", type="boolean")
+     */
+    private $ban;
+
     public function __construct()
     {
         $this->createdOn = new \DateTime();
@@ -303,6 +308,23 @@ class User implements UserInterface
     {
         return $this->createdOn;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBan()
+    {
+        return $this->ban;
+    }
+
+    /**
+     * @param mixed $ban
+     */
+    public function setBan($ban)
+    {
+        $this->ban = $ban;
+    }
+
 
     /**
      * @param Post $post

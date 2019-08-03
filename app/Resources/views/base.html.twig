@@ -63,6 +63,13 @@
                     {% else %}
                         <li><a href="{{ path('user_profile') }}">Profile</a></li>
                     {% endif %}
+                    {% if app.user.isAdmin %}
+                        {% if currentPath == '/users/all' %}
+                            <li class="colorlib-active"><a href="{{ path('all_users') }}">All Users</a></li>
+                        {% else %}
+                            <li><a href="{{ path('all_users') }}">All Users</a></li>
+                        {% endif %}
+                    {% endif %}
                     {% if currentPath == '/post/create' %}
                         <li class="colorlib-active"><a href="{{ path('post_create') }}">New Post</a></li>
                     {% else %}

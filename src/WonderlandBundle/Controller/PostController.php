@@ -13,7 +13,6 @@ use WonderlandBundle\Entity\Comment;
 use WonderlandBundle\Entity\Post;
 use WonderlandBundle\Entity\User;
 use WonderlandBundle\Form\PostType;
-use WonderlandBundle\Service\Comments\CommentService;
 use WonderlandBundle\Service\Comments\CommentServiceInterface;
 use WonderlandBundle\Service\Post\PostServiceInterface;
 
@@ -60,6 +59,10 @@ class PostController extends Controller
          * @var UploadedFile $file
          */
         $file = $form['postImage']->getData();
+        if ($this->getUser()->getBan())
+        {
+            return $this->redirectToRoute('post_create');
+        }
         if ($file)
         {
             $fileName = md5(uniqid()).'.'.$file->guessExtension();

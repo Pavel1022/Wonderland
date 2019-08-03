@@ -14,6 +14,9 @@
                         {% if user.isAdmin %}
                         <p class="mb-2">Admin</p>
                         {% endif %}
+                        {% if user.ban %}
+                            <p style="color: #C82829"><strong>You have BAN !</strong></p>
+                        {% endif %}
                     </div>
                         <p>Username: {{ user.username }}</p>
                     <p>E-Mail: {{ user.email }}</p>

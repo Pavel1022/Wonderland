@@ -14,7 +14,7 @@
                             <div class="author mb-4 d-flex align-items-center">
                                 <a class="img" style="background-image: url({{ asset("uploads/profile/" ~ user.file) }});"></a>
                                 <div class="ml-3 info">
-                                    <span>Posted by</span>
+                                    <span>Posted by {% if user.isAdmin %}Admin{% endif %}</span>
                                     <h3><b>{{ user.firstName }} {{ user.lastName }}</b>, <span>{{ post.addedOn }}</span></h3>
                                 </div>
                             </div>
@@ -23,6 +23,12 @@
                         <a class="btn btn-success" href="{{ path('post_edit', {id : post.id}) }}" role="button" style=" margin-left: 66%; ">Edit Post</a>
                         <a class="btn btn-danger" href="{{ path('post_delete', {id : post.id}) }}" role="button">Delete Post</a><br><br>
                         {% endif %}
+                        {% if app.user.ban %}
+                            <p style="color: #C82829"><strong>You have BAN !</strong></p>
+                                <div class="form-group">
+                                    <textarea name="comment[comment]" cols="30" rows="7" class="form-control" placeholder="Comment" disabled></textarea>
+                                </div>
+                        {% else %}
                         <form action="{{ path('comment', {'id' : post.id}) }}" method="post">
                             <div class="form-group">
                                 <textarea name="comment[comment]" cols="30" rows="7" class="form-control" placeholder="Comment"></textarea>
@@ -31,6 +37,7 @@
                                 <input type="submit" value="Comment" class="btn btn-primary py-3 px-5">
                             </div>
                         </form>
+                        {% endif %}
                         <div class="bg-light p-5 contact-form">
                             <h3>Comments:</h3>
                             {% for comment in comments %}
@@ -45,7 +52,7 @@
                                 <div>
                                     <span style="display:block;width:425px;word-wrap:break-word;">{{ comment.comment }}</span><br>
                                     <span style="text-align: right; margin-left: 68%;"><b>{{ comment.addedOn }}</b></span>
-                                    {% if app.getUser() and (app.getUser().isAuthor(post) or app.getUser().isAdmin) %}
+                                    {% if app.getUser() and (app.getUser().isAuthor(post) or app.getUser().isAdmin or app.getUser().username == comment.author.username) %}
                                     <a href="{{ path('delete_comment', {id : comment.id}) }}" class="btn btn-danger" role="button">Delete</a>
                                     {% endif %}
                                 </div>
