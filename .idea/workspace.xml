@@ -5,12 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/Wonderland.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Wonderland.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/posts/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/posts/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/posts/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/posts/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/posts/post.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/posts/post.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/users/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/users/profile.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WonderlandBundle/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/WonderlandBundle/Controller/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +46,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="wonderland: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wonderland: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="comments: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -59,21 +61,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/post.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-              <folding>
-                <element signature="e#1800#1822#0#HTML" expanded="true" />
-                <element signature="e#3358#3381#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="206">
+              <caret line="54" column="88" selection-start-line="54" selection-start-column="84" selection-end-line="54" selection-end-column="88" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Controller/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
+            <state relative-caret-position="443">
+              <caret line="127" column="44" selection-start-line="127" selection-start-column="44" selection-end-line="127" selection-end-column="44" />
               <folding>
                 <element signature="e#47#109#0#PHP" expanded="true" />
               </folding>
@@ -82,22 +80,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/users/profile.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostServiceInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="52" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="52" />
-              <folding>
-                <element signature="e#730#752#0#HTML" expanded="true" />
-                <element signature="e#862#884#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+              <folding>
+                <element signature="e#51#91#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/comments">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
+            <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
               <filtering>
                 <filter text="" />
               </filtering>
@@ -108,7 +114,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="637">
               <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
             </state>
           </provider>
@@ -117,10 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/roles">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
-              <filtering>
-                <filter text="" />
-              </filtering>
+            <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
+              <filtering />
             </state>
           </provider>
         </entry>
@@ -128,22 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/users_roles">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="125" selection-start-line="11" selection-start-column="125" selection-end-line="11" selection-end-column="125" />
-              <folding>
-                <element signature="e#177#199#0#HTML" expanded="true" />
-              </folding>
+            <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
+              <filtering />
             </state>
           </provider>
         </entry>
@@ -151,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
+            <state relative-caret-position="413">
+              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
               <folding>
                 <element signature="e#47#109#0#PHP" expanded="true" />
               </folding>
@@ -165,9 +155,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="73" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="73" />
-              <folding>
-                <element signature="e#179#201#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -208,13 +195,13 @@
       <find>WonderLa</find>
       <find>addRole</find>
       <find>edit</find>
-      <find>edit</find>
       <find>new Co</find>
       <find>if(</find>
       <find>profile_vie</find>
       <find>poste</find>
       <find>wonder</find>
       <find>Admin</find>
+      <find>isAu</find>
     </findStrings>
     <replaceStrings>
       <replace>file</replace>
@@ -253,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Repository/CommentRepository.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostServiceInterface.php" />
-        <option value="$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostService.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Repository/RoleRepository.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Entity/Role.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Service/Comments/CommentServiceInterface.php" />
@@ -275,71 +261,19 @@
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Service/User/UserService.php" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/allUsers.html.twig" />
-        <option value="$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/users/profile.html.twig" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/posts/post.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/posts/add.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/posts/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/WonderlandBundle/Controller/PostController.php" />
+        <option value="$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostService.php" />
+        <option value="$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
       </list>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
-      <path value="$PROJECT_DIR$/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/link" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
-      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
-      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
-      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
-      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
-      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
-    </include_path>
-  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -357,66 +291,6 @@
             <path>
               <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
               <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="WonderlandBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Wonderland" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Wonderland" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="WonderlandBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -489,11 +363,15 @@
       <workItem from="1564742842947" duration="11215000" />
       <workItem from="1564770434299" duration="16599000" />
       <workItem from="1564787616649" duration="19688000" />
+      <workItem from="1564845128445" duration="202000" />
+      <workItem from="1565018433189" duration="50000" />
+      <workItem from="1565019075299" duration="542000" />
+      <workItem from="1565021694968" duration="1985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97465000" />
+    <option name="totallyTimeSpent" value="100244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,9 +384,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -521,8 +398,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.32913166" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32913166" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" weight="0.32913166" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.32913166" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32913166" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -636,30 +513,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/863761c03beca94134d2d2ef8cb7c349.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/378960b37493051c70e1d77dfa84b638.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/362477b4c69475f11d5275963fee4511.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/3609a5b636fc96a11699f84335aff25d.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/2666fff5a139fabe04e93f0960f43474.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/54fcb30d7d5b866a365c752ae6b42cd0.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/8ed06d02659d3af216be0d017678a815.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/profile/8ca8cc73aafeb39a57140faf17d521e7.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/863761c03beca94134d2d2ef8cb7c349.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/378960b37493051c70e1d77dfa84b638.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/362477b4c69475f11d5275963fee4511.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/3609a5b636fc96a11699f84335aff25d.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/2666fff5a139fabe04e93f0960f43474.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/54fcb30d7d5b866a365c752ae6b42cd0.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/8ed06d02659d3af216be0d017678a815.jpeg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/profile/8ca8cc73aafeb39a57140faf17d521e7.jpeg" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/users/register.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -721,12 +582,13 @@
               <point x="0.0" y="112.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.6248175182481752" x="240.5817757009346" y="364.11214953271025" />
+          <settings layout="Hierarchic Group" zoom="0.6248175182481752" x="241.0" y="364.0" />
           <SelectedNodes />
           <Categories>
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -757,20 +619,8 @@
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.json.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error404.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error404.html.twig" />
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.xml.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -868,23 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostServiceInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="99" column="59" selection-start-line="96" selection-start-column="8" selection-end-line="99" selection-end-column="59" />
-          <folding>
-            <element signature="e#51#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/allUsers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -895,79 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-          <folding>
-            <element signature="e#47#109#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/roles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/users_roles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/comments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ffc60c90-7160-4a14-9ec5-ce0ba7187e76">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/users/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="52" />
-          <folding>
-            <element signature="e#730#752#0#HTML" expanded="true" />
-            <element signature="e#862#884#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/post.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding>
-            <element signature="e#1800#1822#0#HTML" expanded="true" />
-            <element signature="e#3358#3381#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="73" />
-          <folding>
-            <element signature="e#179#201#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -975,19 +739,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="125" selection-start-line="11" selection-start-column="125" selection-end-line="11" selection-end-column="125" />
-          <folding>
-            <element signature="e#177#199#0#HTML" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/users_roles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
+          <filtering />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Controller/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
+        <state relative-caret-position="443">
+          <caret line="127" column="44" selection-start-line="127" selection-start-column="44" selection-end-line="127" selection-end-column="44" />
           <folding>
             <element signature="e#47#109#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/roles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
+          <filtering />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Service/Post/PostService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <folding>
+            <element signature="e#51#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/posts/post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="54" column="88" selection-start-line="54" selection-start-column="84" selection-end-line="54" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WonderlandBundle/Controller/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+          <folding>
+            <element signature="e#47#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dfd58b0d-3499-4069-952e-1ec524a355d1/schema/wonderland/table/comments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="31133c9c-0eec-42b3-8255-da9bba9f51a8">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>

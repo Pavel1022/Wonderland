@@ -70,8 +70,14 @@ class CommentController extends Controller
         {
             return $this->redirectToRoute('homepage');
         }
-
         $postId = $comment->getPostId();
+        if (!$this->getUser()->isAdmin()) {
+            if ($comment->getAuthorId() !== $this->getUser()->getId()) {
+                return $this->redirectToRoute('post_view', [
+                    'id' => $postId
+                ]);
+            }
+        }
         $comment->setDeleted(1);
         $em = $this->getDoctrine()->getManager();
         $em->persist($comment);
